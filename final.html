@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Page</title>
+    <style>
+        /* Center the container vertically */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Flexbox to arrange the image and gifs horizontally */
+        .flex-container {
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Align items in the middle vertically */
+        }
+
+        /* Style for the image and gifs */
+        .gif, img {
+            margin: 0 20px; /* Add space between the image and the gifs */
+        }
+
+        /* Ensure the audio player is visible */
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for image and gifs arranged horizontally -->
+    <div class="flex-container">
+        <!-- Left GIF -->
+        <img class="gif" src="funny.gif" alt="Funny GIF 1" width="200">
+
+        <!-- Center Image -->
+        <img src="gauri.jpg" alt="Congratulations Image" width="300">
+
+        <!-- Right GIF -->
+        <img class="gif" src="funny2.gif" alt="Funny GIF 2" width="200">
+    </div>
+
+    <!-- Audio file that plays automatically -->
+    <audio controls autoplay>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+</html>

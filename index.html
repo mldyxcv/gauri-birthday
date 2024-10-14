@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Button Movement with Multiple Text Changes</title>
+    <style>
+        /* Center the container */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Flex container for text and image */
+        .flex-container {
+            display: flex;
+            flex-direction: column; /* Stack text and image vertically */
+            align-items: center; /* Center items horizontally */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Space between heading and image */
+        }
+
+        /* Style for the image */
+        .movable-image {
+            width: 200px;
+            cursor: pointer; /* Makes the image look clickable */
+            transition: transform 0.5s ease; /* Smooth transition when moving */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <!-- Static Text -->
+        <h1 id="heading">Pop this litchi</h1>
+
+        <!-- Image that acts as a button -->
+        <img id="lycheeImage" src="lychee.png" class="movable-image" onclick="moveImage()">
+    </div>
+
+    <script>
+        let moved = false;
+        let clickCount = 0;
+
+        // Array of text options to cycle through
+        const textOptions = [
+            "Gay people need to pop again",
+            "Again!",
+            "Scammed yo ass",
+            "Okay, last one",
+            "You thought? sskjsd"
+        ];
+
+        function moveImage() {
+            const image = document.getElementById('lycheeImage');
+            const heading = document.getElementById('heading');
+
+            // Toggle the movement of the image
+            if (!moved) {
+                image.style.transform = 'translate(200px, 100px)'; // Move the image
+                moved = true;
+            } else {
+                image.style.transform = 'translate(0, 0)'; // Move the image back
+                moved = false;
+            }
+
+            // Change the text after each click by cycling through the array
+            if (clickCount < textOptions.length) {
+                heading.innerHTML = textOptions[clickCount];
+                clickCount++; // Move to the next text
+            } else {
+                // After the last click, redirect to a new page
+                window.location.href = "final.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
